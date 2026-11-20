@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gustavo Ramos – Desenvolvedor Web &amp; Software</title>
+<style>
+:root{--bg:#070b14;--bg2:#0d1424;--card:#0f1729;--line:#1c2742;--tx:#e6edf7;--mut:#8fa0bb;--acc:#22d3ee;--acc2:#818cf8;--on:#04222a;--chip:#131c31;
+--code:#080d18;--k:#c4b5fd;--s:#86efac;--p:#8fa0bb;--o:#fdba74;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f8fc;--bg2:#eaf0f9;--card:#fff;--line:#d9e2f1;--tx:#0f172a;--mut:#51627f;--acc:#0e7490;--acc2:#4f46e5;--on:#fff;--chip:#e6f0fb;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f6f8fc;--bg2:#eaf0f9;--card:#fff;--line:#d9e2f1;--tx:#0f172a;--mut:#51627f;--acc:#0e7490;--acc2:#4f46e5;--on:#fff;--chip:#e6f0fb;color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.glow{position:absolute;inset:0 0 auto 0;height:640px;pointer-events:none;overflow:hidden;z-index:0}
+.glow:before,.glow:after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.28}
+.glow:before{width:420px;height:420px;background:var(--acc);top:-140px;right:-80px}
+.glow:after{width:360px;height:360px;background:var(--acc2);top:120px;left:-140px;opacity:.2}
+header,main,footer{position:relative;z-index:1}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-weight:800;letter-spacing:.02em}.logo b{color:var(--acc)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:.92rem;color:var(--mut)}
+nav a:hover{color:var(--acc)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:44px 0 70px}
+.pill{display:inline-flex;gap:8px;align-items:center;font-size:.82rem;color:var(--mut);border:1px solid var(--line);background:var(--card);padding:6px 12px;border-radius:99px}
+.dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.2)}
+h1{font-size:clamp(2.3rem,6.4vw,4rem);line-height:1.05;margin:18px 0 14px;letter-spacing:-.03em}
+h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:1.08rem;max-width:520px;margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:12px;font-weight:700;font-size:.95rem;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.btn.p{background:var(--acc);color:var(--on);border-color:transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--acc)}
+.code{background:var(--code);border:1px solid rgba(34,211,238,.35);border-radius:14px;padding:16px 18px;font:13px/1.8 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#e6edf7;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.code i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}
+.code div{opacity:0;animation:in .5s forwards}
+.code .k{color:var(--k)}.code .s{color:var(--s)}.code .p{color:var(--p)}.code .o{color:var(--o)}.code .a{color:#22d3ee}
+@keyframes in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:84px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.stat b{display:block;font-size:2rem;color:var(--acc);line-height:1.1}.stat span{color:var(--mut);font-size:.9rem}
+section{margin-bottom:84px}
+.eyebrow{color:var(--acc);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin:6px 0 26px;letter-spacing:-.02em}
+.about{max-width:700px;color:var(--mut);font-size:1.05rem}.about b{color:var(--tx)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;overflow:hidden;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--acc)}
+.card:before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+.num{font-size:.8rem;color:var(--mut);font-weight:700;letter-spacing:.1em}
+.card h3{margin:6px 0 4px;font-size:1.25rem}
+.tag{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;padding:4px 9px;border-radius:7px;background:var(--acc);color:var(--on);margin-bottom:10px}
+.card p{color:var(--mut);margin:6px 0 14px;font-size:.96rem}
+.stack{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:9px;background:var(--chip);border:1px solid var(--line);color:var(--tx)}
+.concept{margin-top:18px;border:1px dashed var(--line);border-radius:16px;padding:18px 22px;color:var(--mut);font-size:.94rem}.concept b{color:var(--tx)}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.sk h4{margin:0 0 12px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.contact{background:linear-gradient(135deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:22px;padding:40px 28px;text-align:center}
+.contact p{color:var(--mut);max-width:520px;margin:0 auto 24px}
+.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mut);font-size:.85rem;text-align:center}
+.marq{overflow:hidden;margin:0 0 56px;padding:14px 0;border-block:1px solid var(--line);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mt{display:flex;gap:40px;width:max-content;animation:mq 30s linear infinite}
+.mt span{font-weight:800;letter-spacing:.06em;color:var(--mut);font-size:.9rem;text-transform:uppercase;white-space:nowrap}
+.mt span:after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-left:40px;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+.g3{grid-template-columns:repeat(3,1fr)}
+.chip{transition:transform .2s,border-color .2s}.chip:hover{transform:translateY(-2px);border-color:var(--acc)}
+.stat{transition:transform .25s,border-color .25s}.stat:hover{transform:translateY(-3px);border-color:var(--acc)}
+.ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font:700 .85rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--acc);background:var(--chip);border:1px solid var(--line);margin:6px 0 14px}
+.g3 .card{display:flex;flex-direction:column}.g3 .card .stack{margin-top:auto}
+.g3 .card:hover .ic{background:var(--acc);color:var(--on)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:20px}.grid,.skills,.g3{grid-template-columns:1fr}.stats{gap:10px}.stat{padding:14px}.stat b{font-size:1.5rem}nav ul{gap:14px}}
+@media (prefers-reduced-motion:reduce){.rv,.code div,.mt{opacity:1;transform:none;animation:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<header><div class="wrap">
+<nav><a class="logo" href="#topo">gustavo<b>.dev</b></a>
+<ul><li><a href="#foco">Foco</a></li><li><a href="#skills">Skills</a></li><li><a href="#contato">Contato</a></li></ul></nav>
+<div class="hero" id="topo">
+<div>
+<span class="pill"><span class="dot"></span>Disponível para trabalho 100% remoto</span>
+<h1>Olá, eu sou o <span>Gustavo Ramos</span></h1>
+<p class="lead">Desenvolvedor web e de software. Construo sites, painéis e ferramentas para negócios reais e busco minha primeira oportunidade em tecnologia.</p>
+<div class="btns"><a class="btn p" href="#skills">Ver skills</a><a class="btn" href="#contato">Falar comigo</a></div>
+</div>
+<div class="code"><div style="animation-delay:.2s"><i style="background:#f87171"></i><i style="background:#fbbf24"></i><i style="background:#4ade80"></i></div>
+<div style="animation-delay:.5s"><span class="k">const</span> gustavo <span class="p">= {</span></div>
+<div style="animation-delay:.8s">&nbsp;&nbsp;<span class="a">foco</span><span class="p">:</span> <span class="s">"web e software"</span><span class="p">,</span></div>
+<div style="animation-delay:1.1s">&nbsp;&nbsp;<span class="a">stack</span><span class="p">: [</span><span class="s">"TS"</span><span class="p">,</span> <span class="s">"React"</span><span class="p">,</span> <span class="s">"Go"</span><span class="p">],</span></div>
+<div style="animation-delay:1.4s">&nbsp;&nbsp;<span class="a">remoto</span><span class="p">:</span> <span class="o">true</span><span class="p">,</span></div>
+<div style="animation-delay:1.7s">&nbsp;&nbsp;<span class="a">aprendendo</span><span class="p">:</span> <span class="s">"sempre"</span><span class="p">,</span></div>
+<div style="animation-delay:2s"><span class="p">};</span></div></div>
+</div></div></header>
+
+<main class="wrap">
+<div class="marq" aria-hidden="true"><div class="mt"><span>JavaScript</span><span>TypeScript</span><span>Go</span><span>Python</span><span>React</span><span>Node.js</span><span>SQL</span><span>Docker</span><span>Git</span><span>Linux</span><span>JavaScript</span><span>TypeScript</span><span>Go</span><span>Python</span><span>React</span><span>Node.js</span><span>SQL</span><span>Docker</span><span>Git</span><span>Linux</span></div></div>
+<div class="stats rv"><div class="stat"><b>20</b><span>linguagens no repertório</span></div><div class="stat"><b>3</b><span>bancos de dados</span></div><div class="stat"><b>100%</b><span>remoto</span></div></div>
+
+<section class="rv"><div class="eyebrow">Sobre</div><h2>Quem sou eu</h2>
+<p class="about">Sou desenvolvedor em início de carreira e <b>já construo sites para negócios reais</b>: carrinho de pedidos por WhatsApp, painel administrativo, web rádio e peças de design como encartes e artes. Gosto de aprender fazendo, entregar algo que funciona e melhorar a cada versão.</p></section>
+
+<section id="foco"><div class="eyebrow rv">Foco</div><h2 class="rv">No que eu trabalho</h2>
+<p class="about rv" style="margin:-10px 0 26px">Áreas em que mais me interesso e que já pratico, do visual ao código.</p>
+<div class="grid g3">
+<article class="card rv"><div class="ic">&lt;/&gt;</div><h3>Web</h3><p>Sites e interfaces responsivas, com cuidado com o visual e com a experiência no celular.</p><div class="stack"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">React</span></div></article>
+<article class="card rv"><div class="ic">{ }</div><h3>Back-end</h3><p>APIs e lógica de programação com Node.js, Go e Flask, usando SQL, MySQL e SQLite.</p><div class="stack"><span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Flask</span></div></article>
+<article class="card rv"><div class="ic">API</div><h3>Painéis e integrações</h3><p>Painéis administrativos, carrinho de pedidos por WhatsApp e player de rádio ligado ao AzuraCast.</p><div class="stack"><span class="chip">WhatsApp</span><span class="chip">AzuraCast</span><span class="chip">GitHub</span></div></article>
+<article class="card rv"><div class="ic">Aa</div><h3>Design</h3><p>Encartes, artes para divulgação e identidade visual para pequenos negócios.</p><div class="stack"><span class="chip">Encartes</span><span class="chip">Artes</span><span class="chip">Identidade visual</span></div></article>
+<article class="card rv"><div class="ic">$_</div><h3>Linux e ferramentas</h3><p>Familiaridade com Linux (Debian), Bash e Docker para desenvolver e rodar projetos.</p><div class="stack"><span class="chip">Linux</span><span class="chip">Bash</span><span class="chip">Docker</span></div></article>
+<article class="card rv"><div class="ic">git</div><h3>Colaboração</h3><p>Git e GitHub para versionar código, com vontade de aprender e entregar junto com um time.</p><div class="stack"><span class="chip">Git</span><span class="chip">GitHub</span></div></article>
+</div></section>
+
+<section id="skills"><div class="eyebrow rv">Skills</div><h2 class="rv">Tecnologias</h2>
+<div class="skills">
+<div class="sk rv"><h4>Linguagens</h4><div class="stack"><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">C#</span><span class="chip">PHP</span><span class="chip">Ruby</span><span class="chip">Swift</span><span class="chip">Dart</span><span class="chip">Rust</span><span class="chip">Lua</span><span class="chip">Bash</span><span class="chip">Kotlin</span><span class="chip">Perl</span><span class="chip">R</span><span class="chip">Scala</span><span class="chip">Elixir</span></div></div>
+<div class="sk rv"><h4>Web e frameworks</h4><div class="stack"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Flask</span><span class="chip">JavaScript (DOM)</span><span class="chip">Fetch API</span><span class="chip">APIs REST</span><span class="chip">Flexbox e Grid</span></div></div>
+<div class="sk rv"><h4>Banco de dados</h4><div class="stack"><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">SQLite</span><span class="chip">Consultas SQL</span><span class="chip">Modelagem de dados</span><span class="chip">JSON</span></div></div>
+<div class="sk rv"><h4>Ferramentas e design</h4><div class="stack"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Docker</span><span class="chip">Linux (Debian)</span><span class="chip">APIs</span><span class="chip">Responsividade</span><span class="chip">Landing pages</span><span class="chip">GitHub Pages</span><span class="chip">AzuraCast</span><span class="chip">Integração com WhatsApp</span><span class="chip">Painel administrativo</span><span class="chip">Animações CSS</span><span class="chip">Design de interfaces</span><span class="chip">Identidade visual</span><span class="chip">Encartes</span><span class="chip">Artes para divulgação</span></div></div>
+</div></section>
+
+<section id="contato"><div class="contact rv"><div class="eyebrow">Contato</div><h2>Vamos conversar?</h2>
+<p>Estou em busca da minha primeira oportunidade em tecnologia, em regime 100% remoto. Me chama por onde preferir.</p>
+<div class="links"><a class="btn p" href="mailto:darkenrj877@gmail.com">E-mail</a><a class="btn" href="https://github.com/s1mp-dev" target="_blank" rel="noopener">GitHub</a></div></div></section>
+</main>
+<footer><div class="wrap">Gustavo Ramos da Silva Caetano · Feito à mão com HTML, CSS e JavaScript</div></footer>
+<script>
+(function(){var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});})();
+</script>
+</body>
+</html>
